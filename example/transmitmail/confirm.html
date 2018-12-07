@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>入力内容の確認</title>
+<link rel="stylesheet" type="text/css" href="css/form_style.css" />
+</head>
+<body class="home">
+<div id="formWrap">
+            <h2>入力内容の確認</h2>
+            <p>以下の内容でよろしければ、ページ下部の送信ボタンを押してください。<br>
+                誤りがある場合は、前画面に戻って再度ご入力ください。</p>
+            <table class="formTable">
+                <tr>
+                    <th>{$ご用件.key}&nbsp;</th>
+                    <td>{$ご用件.value}&nbsp;</td>
+                </tr>
+                 <tr>
+                    <th>{$お名前.key}&nbsp;</th>
+                    <td>{$お名前.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$フリガナ.key}&nbsp;</th>
+                    <td>{$フリガナ.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$電話番号.key}&nbsp;</th>
+                    <td>{$電話番号.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$メールアドレス.key}&nbsp;</th>
+                    <td>{$メールアドレス.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$郵便番号.key}&nbsp;</th>
+                    <td>{$郵便番号.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$ご住所.key}&nbsp;</th>
+                    <td>{$ご住所.value}{$以降の住所.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$性別.key}&nbsp;</th>
+                    <td>{$性別.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$サイトを知ったきっかけ.key}&nbsp;</th>
+                    <td>{$サイトを知ったきっかけ.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$お問い合わせ内容.key}&nbsp;</th>
+                    <td>{$お問い合わせ内容.value.nl2br}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>生年月日</th>
+                    <td>{$生年月日（年）.value}&nbsp;{$生年月日（月）.value}&nbsp;{$生年月日（日）.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>お名前</th>
+                    <td>{$姓.value}&nbsp;{$名.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>フリガナ</th>
+                    <td>{$セイ.value}&nbsp;{$メイ.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td>{$電話1.value}&nbsp;-&nbsp;{$電話2.value}&nbsp;-&nbsp;{$電話3.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>郵便番号</th>
+                    <td>{$郵便1.value}&nbsp;-&nbsp;{$郵便2.value}&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>{$都道府県.key}&nbsp;</th>
+                    <td>{$都道府県.value}&nbsp;</td>
+                </tr>
+            </table>
+            <div class="confirm_btn">
+                <form method="post" action="index.php" class="inline">
+                    {$hiddens}
+                    <input type="hidden" name="page" value="input">
+                    <input type="submit" value="入力画面に戻る" class="retrun_submit">
+                </form>
+                &nbsp;
+                <form method="post" action="index.php" class="inline">
+                    {$hiddens}
+                    <input type="hidden" name="page" value="finish">
+                    <input type="submit" value="送信する">
+                </form>
+            </div>
+        </div>
+  <script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 858312348;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/858312348/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+</body>
+</html>

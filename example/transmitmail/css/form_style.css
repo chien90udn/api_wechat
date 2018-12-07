@@ -1,0 +1,292 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	color: #161730;
+}
+html, body {
+	width: 100%;
+	background: #fff;
+}
+#formWrap {
+	width:980px;
+	margin:0 auto;
+	color:#555;
+	line-height:120%;
+	font-size:90%;
+}
+#formWrap h3{
+  text-align:center;
+}
+#formWrap > p{
+  text-align:center;
+}
+table.formTable{
+	width:100%;
+	margin:0 auto;
+	border-collapse:collapse;
+}
+table.formTable td,table.formTable th{
+	border:1px solid #ccc;
+	padding:15px;
+}
+table.formTable th{
+	width:30%;
+	font-weight:normal;
+	background:#efefef;
+	text-align:left;
+}
+.size--Mini{
+    width:20%;
+    float:left;
+}
+.size--S{
+    width:30%;
+    float:left;
+    margin:0 3.3333333333% 0 0;
+}
+.size--M{
+    width:45%;
+    float:left;
+    margin:0 2.5% 0 0;
+}
+.size--L{
+    width:75%;
+    float:left;
+}
+[type='text'], [type='email'], [type='number'], textarea, select,.file_photo_btn label {
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+    border-radius: 5px;
+    font-size: 14px;
+}
+[type='text'], [type='email'], [type='number'], textarea, select,.file_photo_btn label{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 8px 15px;
+}
+[type='text'], [type='email'], [type='number'],textarea, select,.file_photo_btn label{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    float:left;
+}
+[type='submit'], [type='reset'], [type='button'],.thanks__btn{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding:10px 65px;
+    font-size:1em;
+    border-radius:10px;
+    margin:30px 0 20px;
+    text-decoration: none;
+}
+[type='submit'],.thanks__btn{
+    background:#222;
+    color:#fff;
+}
+[type='submit']:hover,.thanks__btn:hover{
+    background:#ff6600;
+    color:#fff;
+}
+[type='reset'],[type='button'],.retrun_submit{
+    background:#eee;
+    color:#333;
+}
+[type='reset']:hover,[type='button']:hover,.retrun_submit:hover{
+    background: #666;
+    color:#fff;
+}
+
+[type='radio']:checked + label {
+    color: #333;
+    font-weight: bold;
+}
+.file_photo_btn label{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #ababab), color-stop(0.35, #fff));
+background: -webkit-linear-gradient(top, #fff 35%, #ababab 100%);
+background: -moz-linear-gradient(top, #fff 35%, #ababab 100%);
+background: -o-linear-gradient(top, #fff 35%, #ababab 100%);
+background: -ms-linear-gradient(top, #fff 35%, #ababab 100%);
+background: linear-gradient(to bottom, #fff 35%, #ababab 100%);
+    font-weight: bold;
+    color: #666;
+}
+.file_photo_btn label:active{
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #838383), color-stop(1.00, #fff));
+    background: -webkit-linear-gradient(#838383, #fff);
+    background: -moz-linear-gradient(#838383, #fff);
+    background: -o-linear-gradient(#838383, #fff);
+    background: -ms-linear-gradient(#838383, #fff);
+    background: linear-gradient(#838383, #fff);
+}
+.file_photo_btn:after{
+  content: '500KB以下のGIF、JPG、PNG';
+  position: absolute;
+  top:30%;
+  right:-90%;
+  width: 100%;
+}
+.file_photo_btn{
+  position: relative;
+}
+.radio label {
+    margin:0 10px 0 0;
+}
+
+.select label {
+    display: block;
+    position: relative;
+}
+.select label:before {
+    content: '\f0d7';
+    font-family: FontAwesome;
+    position: absolute;
+    right: 0;
+    top: -1px;
+    padding: 11px 8px;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    color: #666;
+    background:#ddd;
+    z-index:10;
+}
+.form-category{
+  margin:50px 0 0;
+}
+.phone_3text label + label,.zip_2text label + label{
+  margin: 0 0 0 30px;
+  position: relative;
+}
+.phone_3text label + label:before,.zip_2text label + label:before{
+  content: '-';
+  position: absolute;
+  top: 22%;
+  left:-10%;
+  font-size: 25px;
+  color: #999;
+}
+.name_2text label{
+  margin: 0 0 0 40px;
+  position: relative;
+}
+.name_2text label + label{
+  margin: 0 0 0 60px;
+}
+.name_2text label:before{
+  position: absolute;
+  top: 25%;
+  left:-18%;
+}
+.fFname-text:before{
+  content: '姓';
+}
+.fGname-text:before{
+  content: '名';
+}
+.fFrname-text:before{
+  content: 'セイ';
+}
+.fGrname-text:before{
+  content: 'メイ';
+}
+/* icon style */
+.required-mark:before {
+  content:'必須';
+  position: relative;
+  top: -1px;
+  margin: 0 20px 0 0;
+  padding: 4px 12px 5px;
+  font-size: 12px;
+  background: #ff6600;
+  color: #fff;
+  font-weight: normal;
+  line-height: 30px;
+  border-radius: 4px;
+}
+.any:before{
+  background: #666;
+  content:'任意';
+}
+.note{
+  margin:7px 0 0 15px;
+  float:left;
+  font-size:13px;
+}
+.note--tab{
+    margin:0 0 0 10px;
+    float:left;
+    clear:both;
+    background:#666;
+    border-radius:5px 5px 0 0;
+    padding:3px 15px;
+    color:#fff;
+    font-size:12px;
+}
+.top10{
+    margin-top:10px!important;
+}
+.privacy__text{
+	width: 94%;
+	height: 210px;
+	overflow-y: scroll;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+    border-radius: 5px;
+    padding: 0 3%;
+    text-align: left;
+    margin: 0 0 35px;
+}
+.finish_section,.privacy,.privacy__text h4,.file_photo_btn{
+	text-align: center;
+}
+.privacy__text p{
+	font-size: 1em;
+	line-height: 1.6em;
+}
+.privacy__text h4{
+	font-size: 1.5em;
+}
+.privacy__text h5{
+	font-size: 1.2em;
+	margin: 1.5em 0 0.7em;
+}
+.privacy__text h6{
+	font-size: 1em;
+	margin: 1.2em 0 0.3em;
+}
+.privacy{
+	margin: 70px 0 0;
+}
+.confirm_btn,.finish{
+  text-align: center;
+}
+.confirm_btn form{
+   display: inline-block;
+}
+.finish p a{
+  display: inline-block;
+    padding:10px 65px;
+    font-size:1em;
+    border-radius:10px;
+    margin:30px 0 20px;
+    text-decoration: none;
+    background:#ddd;
+    color: #333;
+}
+
+
+

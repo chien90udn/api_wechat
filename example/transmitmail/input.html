@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>サンプル</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/form_style.css" />
+</head>
+<body class="home">
+
+<div id="formWrap">
+  <h2>お問い合わせ</h2>
+  <p>下記フォームに必要事項を入力後、確認ボタンを押してください。</p>
+            <form method="post" action="index.php" enctype="multipart/form-data">
+                    <h3>フォームパーツサンプル</h3>
+                    <table class="formTable">
+                        <tr>
+                            <th class="required-mark">ご用件</th>
+                            <td class="select">
+                              <label class="size--L" for="ご用件">
+                                <select name="ご用件" id="fFor">
+                                  <option value="">選択してください</option>
+                                  <option value="ご質問・お問い合わせ" {$selected.ご用件.ご質問・お問い合わせ}>ご質問・お問い合わせ</option>
+                                  <option value="リンクについて" {$selected.ご用件.リンクについて}>リンクについて</option>
+                                </select>
+                              </label>
+                            </td>
+                        </tr>
+
+                       <!-- <tr>
+                            <th>マルチプルセレクトメニュー</th>
+                            <td>
+                                <select name="マルチプルセレクトメニュー[]" multiple="multiple">
+                                    <option value="項目1" {$selected.マルチプルセレクトメニュー.項目1}>項目1</option>
+                                    <option value="項目2" {$selected.マルチプルセレクトメニュー.項目2}>項目2</option>
+                                    <option value="項目3" {$selected.マルチプルセレクトメニュー.項目3}>項目3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        -->
+                        <tr>
+                            <th class="required-mark">お名前</th>
+                            <td><input type="text" value="{$お名前}" name="お名前" id="fName" placeholder="例）東京　太郎"/>
+                            <span class="note">例）東京　太郎</span></td>
+                        </tr>
+                        <tr>
+                            <th class="required-mark">フリガナ</th>
+                            <td><input type="text" name="フリガナ" value="{$フリガナ}" id="fFuri" placeholder="例）トウキョウ　タロウ"/>
+                                <span class="note">例）トウキョウ　タロウ</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="required-mark">電話番号</th>
+                            <td><input type="text" name="電話番号" id="fPhone" value="{$電話番号}" placeholder="例）0312345678"/>
+                            <span class="note">例）0312345678</span></td>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="required-mark">メールアドレス</th>
+                            <td><input type="text" name="メールアドレス" id="fEmail" value="{$メールアドレス}" placeholder="例）example@example.jp"/>
+                            <span class="note">例）example@example.jp</span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="required-mark">メールアドレス（確認用）</th>
+                            <td>
+                            <span class="note--tab">認のためにもう一度同じメールアドレスを入力してください</span>
+                            <input type="text" name="メールアドレス2" id="fEmail2" value="{$メールアドレス2}" placeholder="例）example@example.jp"/>
+                            </td>
+                          </tr>
+                          <tr>
+                                  <th class="required-mark">郵便番号</th>
+                                  <td>
+                                    <span class="note--tab">ご入力いただくと住所が自動で入力されます。</span>
+                                    <input type="text" class="size--L" name="郵便番号" value="{$郵便番号}" id="fzip" placeholder="例）1001234"/>
+                                  </td>
+                                </tr>
+
+                                <tr>
+                                  <th class="required-mark">ご住所</th>
+                                  <td>
+                                    <input type="text" name="ご住所" value="{$ご住所}" id="addr" placeholder="例）東京都◯◯区◯◯◯◯町"/>
+                                    <span class="note--tab top10">上記以降の住所をご入力ください</span>
+                                    <input type="text" name="以降の住所" value="{$以降の住所}" id="addr2" placeholder="例）1-1-1 ◯◯ビル◯F"/>
+                                  </td>
+                                </tr>
+                          <tr>
+                          <tr>
+                            <th class="required-mark any">性別</th>
+                            <td class="radio">
+                              <input type="radio" name="性別" value="男" id="radio1-01" {$checked.性別.男} {$checked.default}>
+                              <label for="radio1-01">男</label>
+                              <input type="radio" name="性別" value="女" id="radio1-02" {$checked.性別.女}>
+                              <label for="radio1-02">女</label>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th class="required-mark any">サイトを知ったきっかけ</th>
+                            <td>
+                            <label><input name="サイトを知ったきっかけ[0]" type="checkbox" value="友人・知人" {$checked.サイトを知ったきっかけ.友人・知人} {$checked.default}> 友人・知人</label>　
+                            <label><input name="サイトを知ったきっかけ[1]" type="checkbox" value="検索エンジン" {$checked.サイトを知ったきっかけ.検索エンジン}> 検索エンジン</label></td>
+                          </tr>
+                
+                        <tr>
+                            <th class="required-mark any">ファイル</th>
+                            <td>
+                                {if:$ファイル1.tmp_name}
+                                <label><input type="checkbox" name="file_remove[]" value="ファイル1">
+                                    このファイルを削除する</label>
+                                <p><img src="index.php?file={$ファイル1.tmp_name}" alt="{$ファイル1.name}" width="300"><br>
+                                    <a href="index.php?file={$ファイル1.tmp_name}" target="_blank" class="external">画像を別ウィンドウで開く</a></p>
+                                <input type="hidden" name="file[ファイル1][tmp_name]" value="{$ファイル1.tmp_name}">
+                                <input type="hidden" name="file[ファイル1][name]" value="{$ファイル1.name}">
+                                {/if:$ファイル1.tmp_name}
+                                <span class="file_photo_btn size--M"><label for="file_photo">ファイルを選択<input type="file" id="file_photo" name="ファイル1" style="display:none;"></label></span>
+                                {loop:$file.ファイル1}
+                                <div class="error"><em>{$file.ファイル1[]}</em></div>
+                                {/loop:$file.ファイル1}
+                            </td>
+                        </tr>
+                         <tr>
+                            <th class="required-mark any">お問い合わせ内容</th>
+                            <td><textarea name="お問い合わせ内容" rows="8" placeholder="気軽お問い合わせください">{$お問い合わせ内容}</textarea></td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <th>ファイル2（500KB以下のGIF、JPG、PNG）</th>
+                            <td>
+                                {if:$ファイル2.tmp_name}
+                                <label><input type="checkbox" name="file_remove[]" value="ファイル2">
+                                    このファイルを削除する</label>
+                                <p><img src="index.php?file={$ファイル2.tmp_name}" alt="{$ファイル2.name}" width="300"><br>
+                                    <a href="index.php?file={$ファイル2.tmp_name}" target="_blank" class="external">画像を別ウィンドウで開く</a></p>
+                                <input type="hidden" name="file[ファイル2][tmp_name]" value="{$ファイル2.tmp_name}">
+                                <input type="hidden" name="file[ファイル2][name]" value="{$ファイル2.name}">
+                                {/if:$ファイル2.tmp_name}
+                                <input type="file" name="ファイル2">
+                                {loop:$file.ファイル2}
+                                <div class="error"><em>{$file.ファイル2[]}</em></div>
+                                {/loop:$file.ファイル2}
+                            </td>
+                        </tr>
+                        -->
+                        <tr>
+              <th class="required-mark">生年月日</th>
+              <td class="select">
+                <label class="size--S" for="生年月日（年）">
+                  <select name="生年月日（年）" id="fBirth-y">
+                    <option value="" {$selected.生年月日.年}>年</option>
+                    <option value="1935年" {$selected.生年月日.1935年}>1935年</option>
+                    <option value="1936年" {$selected.生年月日.1936年}>1936年</option>
+                    <option value="1937年" {$selected.生年月日.1937年}>1937年</option>
+                    <option value="1938年" {$selected.生年月日.1938年}>1938年</option>
+                    <option value="1939年" {$selected.生年月日.1939年}>1939年</option>
+                    <option value="1940年" {$selected.生年月日.1940年}>1940年</option>
+                    <option value="1941年" {$selected.生年月日.1941年}>1941年</option>
+                    <option value="1942年" {$selected.生年月日.1942年}>1942年</option>
+                    <option value="1943年" {$selected.生年月日.1943年}>1943年</option>
+                    <option value="1944年" {$selected.生年月日.1944年}>1944年</option>
+                    <option value="1945年" {$selected.生年月日.1945年}>1945年</option>
+                    <option value="1946年" {$selected.生年月日.1946年}>1946年</option>
+                    <option value="1947年" {$selected.生年月日.1947年}>1947年</option>
+                    <option value="1948年" {$selected.生年月日.1948年}>1948年</option>
+                    <option value="1949年" {$selected.生年月日.1949年}>1949年</option>
+                    <option value="1950年" {$selected.生年月日.1950年}>1950年</option>
+                    <option value="1951年" {$selected.生年月日.1951年}>1951年</option>
+                    <option value="1952年" {$selected.生年月日.1952年}>1952年</option>
+                    <option value="1953年" {$selected.生年月日.1953年}>1953年</option>
+                    <option value="1954年" {$selected.生年月日.1954年}>1954年</option>
+                    <option value="1955年" {$selected.生年月日.1955年}>1955年</option>
+                    <option value="1956年" {$selected.生年月日.1956年}>1956年</option>
+                    <option value="1957年" {$selected.生年月日.1957年}>1957年</option>
+                    <option value="1958年" {$selected.生年月日.1958年}>1958年</option>
+                    <option value="1959年" {$selected.生年月日.1959年}>1959年</option>
+                    <option value="1960年" {$selected.生年月日.1960年}>1960年</option>
+                    <option value="1961年" {$selected.生年月日.1961年}>1961年</option>
+                    <option value="1962年" {$selected.生年月日.1962年}>1962年</option>
+                    <option value="1963年" {$selected.生年月日.1963年}>1963年</option>
+                    <option value="1964年" {$selected.生年月日.1964年}>1964年</option>
+                    <option value="1965年" {$selected.生年月日.1965年}>1965年</option>
+                    <option value="1966年" {$selected.生年月日.1966年}>1966年</option>
+                    <option value="1967年" {$selected.生年月日.1967年}>1967年</option>
+                    <option value="1968年" {$selected.生年月日.1968年}>1968年</option>
+                    <option value="1969年" {$selected.生年月日.1969年}>1969年</option>
+                    <option value="1970年" {$selected.生年月日.1970年}>1970年</option>
+                    <option value="1971年" {$selected.生年月日.1971年}>1971年</option>
+                    <option value="1972年" {$selected.生年月日.1972年}>1972年</option>
+                    <option value="1973年" {$selected.生年月日.1973年}>1973年</option>
+                    <option value="1974年" {$selected.生年月日.1974年}>1974年</option>
+                    <option value="1975年" {$selected.生年月日.1975年}>1975年</option>
+                    <option value="1976年" {$selected.生年月日.1976年}>1976年</option>
+                    <option value="1977年" {$selected.生年月日.1977年}>1977年</option>
+                    <option value="1978年" {$selected.生年月日.1978年}>1978年</option>
+                    <option value="1979年" {$selected.生年月日.1979年}>1979年</option>
+                    <option value="1980年" {$selected.生年月日.1980年}>1980年</option>
+                    <option value="1981年" {$selected.生年月日.1981年}>1981年</option>
+                    <option value="1982年" {$selected.生年月日.1982年}>1982年</option>
+                    <option value="1983年" {$selected.生年月日.1983年}>1983年</option>
+                    <option value="1984年" {$selected.生年月日.1984年}>1984年</option>
+                    <option value="1985年" {$selected.生年月日.1985年}>1985年</option>
+                    <option value="1986年" {$selected.生年月日.1986年}>1986年</option>
+                    <option value="1987年" {$selected.生年月日.1987年}>1987年</option>
+                    <option value="1988年" {$selected.生年月日.1988年}>1988年</option>
+                    <option value="1989年" {$selected.生年月日.1989年}>1989年</option>
+                    <option value="1990年" {$selected.生年月日.1990年}>1990年</option>
+                    <option value="1991年" {$selected.生年月日.1991年}>1991年</option>
+                    <option value="1992年" {$selected.生年月日.1992年}>1992年</option>
+                    <option value="1993年" {$selected.生年月日.1993年}>1993年</option>
+                    <option value="1994年" {$selected.生年月日.1994年}>1994年</option>
+                    <option value="1995年" {$selected.生年月日.1995年}>1995年</option>
+                    <option value="1996年" {$selected.生年月日.1996年}>1996年</option>
+                    <option value="1997年" {$selected.生年月日.1997年}>1997年</option>
+                    <option value="1998年" {$selected.生年月日.1998年}>1998年</option>
+                    <option value="1999年" {$selected.生年月日.1999年}>1999年</option>
+                    <option value="2000年" {$selected.生年月日.2000年}>2000年</option>
+                    <option value="2001年" {$selected.生年月日.2001年}>2001年</option>
+                    <option value="2002年" {$selected.生年月日.2002年}>2002年</option>
+                    <option value="2003年" {$selected.生年月日.2003年}>2003年</option>
+                    <option value="2004年" {$selected.生年月日.2004年}>2004年</option>
+                    <option value="2005年" {$selected.生年月日.2005年}>2005年</option>
+                    <option value="2006年" {$selected.生年月日.2006年}>2006年</option>
+                    <option value="2007年" {$selected.生年月日.2007年}>2007年</option>
+                    <option value="2008年" {$selected.生年月日.2008年}>2008年</option>
+                    <option value="2009年" {$selected.生年月日.2009年}>2009年</option>
+                    <option value="2010年" {$selected.生年月日.2010年}>2010年</option>
+                    <option value="2011年" {$selected.生年月日.2011年}>2011年</option>
+                    <option value="2012年" {$selected.生年月日.2012年}>2012年</option>
+                    <option value="2013年" {$selected.生年月日.2013年}>2013年</option>
+                    <option value="2014年" {$selected.生年月日.2014年}>2014年</option>
+                  </select>
+                </label>
+        
+                <label class="size--S" for="生年月日（月）">
+                  <select name="生年月日（月）" id="fBirth-m">
+                    <option value="" {$selected.生年月日.月}>月</option>
+                    <option value="1月" {$selected.生年月日.1月}>1月</option>
+                    <option value="2月" {$selected.生年月日.2月}>2月</option>
+                    <option value="3月" {$selected.生年月日.3月}>3月</option>
+                    <option value="4月" {$selected.生年月日.4月}>4月</option>
+                    <option value="5月" {$selected.生年月日.5月}>5月</option>
+                    <option value="6月" {$selected.生年月日.6月}>6月</option>
+                    <option value="7月" {$selected.生年月日.7月}>7月</option>
+                    <option value="8月" {$selected.生年月日.8月}>8月</option>
+                    <option value="9月" {$selected.生年月日.9月}>9月</option>
+                    <option value="10月" {$selected.生年月日.10月}>10月</option>
+                    <option value="11月" {$selected.生年月日.11月}>11月</option>
+                    <option value="12月" {$selected.生年月日.12月}>12月</option>
+                  </select>
+                </label>
+                <label class="size--S" for="生年月日（日）">
+                  <select name="生年月日（日）" id="fBirth-d">
+                    <option value="" {$selected.生年月日.日}>日</option>
+                    <option value="1日" {$selected.生年月日.1日}>1日</option>
+                    <option value="2日" {$selected.生年月日.2日}>2日</option>
+                    <option value="3日" {$selected.生年月日.3日}>3日</option>
+                    <option value="4日" {$selected.生年月日.4日}>4日</option>
+                    <option value="5日" {$selected.生年月日.5日}>5日</option>
+                    <option value="6日" {$selected.生年月日.6日}>6日</option>
+                    <option value="7日" {$selected.生年月日.7日}>7日</option>
+                    <option value="8日" {$selected.生年月日.8日}>8日</option>
+                    <option value="9日" {$selected.生年月日.9日}>9日</option>
+                    <option value="10日" {$selected.生年月日.10日}>10日</option>
+                    <option value="11日" {$selected.生年月日.11日}>11日</option>
+                    <option value="12日" {$selected.生年月日.12日}>12日</option>
+                    <option value="13日" {$selected.生年月日.13日}>13日</option>
+                    <option value="14日" {$selected.生年月日.14日}>14日</option>
+                    <option value="15日" {$selected.生年月日.15日}>15日</option>
+                    <option value="16日" {$selected.生年月日.16日}>16日</option>
+                    <option value="17日" {$selected.生年月日.17日}>17日</option>
+                    <option value="18日" {$selected.生年月日.18日}>18日</option>
+                    <option value="19日" {$selected.生年月日.19日}>19日</option>
+                    <option value="20日" {$selected.生年月日.20日}>20日</option>
+                    <option value="21日" {$selected.生年月日.21日}>21日</option>
+                    <option value="22日" {$selected.生年月日.22日}>22日</option>
+                    <option value="23日" {$selected.生年月日.23日}>23日</option>
+                    <option value="24日" {$selected.生年月日.24日}>24日</option>
+                    <option value="25日" {$selected.生年月日.25日}>25日</option>
+                    <option value="26日" {$selected.生年月日.26日}>26日</option>
+                    <option value="27日" {$selected.生年月日.27日}>27日</option>
+                    <option value="28日" {$selected.生年月日.28日}>28日</option>
+                    <option value="29日" {$selected.生年月日.29日}>29日</option>
+                    <option value="30日" {$selected.生年月日.30日}>30日</option>
+                    <option value="31日" {$selected.生年月日.31日}>31日</option>
+                  </select>
+                  </label>
+              </td>
+            </tr>
+    </table>
+
+    <div class="form-category">
+      <h3>個人情報の入力</h3>
+          <table class="formTable">
+      <tr>
+        <th class="required-mark">お名前</th>
+        <td class="name_2text">
+        <label class="size--S fFname-text" for="姓"><input type="text" value="{$姓}" name="姓" id="fFname" placeholder="例）東京"/></label>
+        <label class="size--S fGname-text" for="名"><input type="text" value="{$名}" name="名" id="fGname" placeholder="例）太郎"/></label>
+        </td>
+      </tr>
+      <tr>
+        <th class="required-mark">フリガナ</th>
+        <td class="name_2text">
+        <label class="size--S fFrname-text" for="セイ"><input type="text" value="{$セイ}" name="セイ" id="fFrname" placeholder="例）トウキョウ"/></label>
+        <label class="size--S fGrname-text" for="メイ"><input type="text" value="{$メイ}" name="メイ" id="fGrname" placeholder="例）タロウ"/></label>
+        </td>
+      </tr>
+      <tr>
+        <th class="required-mark">電話番号</th>
+        <td class="phone_3text">　
+        <label class="size--Mini" for="電話1"><input type="text" value="{$電話1}" name="電話1" id="fFrphone-text" placeholder="例）000"/></label>
+        <label class="size--S" for="電話2"><input type="text" value="{$電話2}" name="電話2" id="fSephone-text" placeholder="例）1234"/></label>
+        <label class="size--S" for="電話3"><input type="text" value="{$電話3}" name="電話3" id="fThphone-text" placeholder="例）5678"/></label>
+        </td>
+      </tr>
+      <tr>
+        <th class="required-mark">郵便番号</th>
+        <td class="zip_2text">　
+        <label class="size--Mini" for="郵便1"><input type="text" value="{$郵便1}" name="郵便1" id="fFrzip-text" placeholder="例）000"/></label>
+        <label class="size--S" for="郵便2"><input type="text" value="{$郵便2}" name="郵便2" id="fSezip-text" placeholder="例）1234"/></label>
+        </td>
+      </tr>
+          <tr>
+              <th class="required-mark">都道府県</th>
+              <td class="select">
+                <label class="size--L" for="都道府県">
+                 <select name="都道府県" id="fUnits">
+                        <option value="" {$selected.都道府県.都道府県}>都道府県</option>
+                        <option value="北海道" {$selected.都道府県.北海道}>北海道</option>
+                        <option value="青森県" {$selected.都道府県.青森県}>青森県</option>
+                        <option value="岩手県" {$selected.都道府県.岩手県}>岩手県</option>
+                        <option value="宮城県" {$selected.都道府県.宮城県}>宮城県</option>
+                        <option value="秋田県" {$selected.都道府県.秋田県}>秋田県</option>
+                        <option value="山形県" {$selected.都道府県.山形県}>山形県</option>
+                        <option value="福島県" {$selected.都道府県.福島県}>福島県</option>
+                        <option value="茨城県" {$selected.都道府県.茨城県}>茨城県</option>
+                        <option value="栃木県" {$selected.都道府県.栃木県}>栃木県</option>
+                        <option value="群馬県" {$selected.都道府県.群馬県}>群馬県</option>
+                        <option value="埼玉県" {$selected.都道府県.埼玉県}>埼玉県</option>
+                        <option value="千葉県" {$selected.都道府県.千葉県}>千葉県</option>
+                        <option value="東京都" {$selected.都道府県.東京都}>東京都</option>
+                        <option value="神奈川県" {$selected.都道府県.神奈川県}>神奈川県</option>
+                        <option value="新潟県" {$selected.都道府県.新潟県}>新潟県</option>
+                        <option value="富山県" {$selected.都道府県.富山県}>富山県</option>
+                        <option value="石川県" {$selected.都道府県.石川県}>石川県</option>
+                        <option value="福井県" {$selected.都道府県.福井県}>福井県</option>
+                        <option value="山梨県" {$selected.都道府県.山梨県}>山梨県</option>
+                        <option value="長野県" {$selected.都道府県.長野県}>長野県</option>
+                        <option value="岐阜県" {$selected.都道府県.岐阜県}>岐阜県</option>
+                        <option value="静岡県" {$selected.都道府県.静岡県}>静岡県</option>
+                        <option value="愛知県" {$selected.都道府県.愛知県}>愛知県</option>
+                        <option value="三重県" {$selected.都道府県.三重県}>三重県</option>
+                        <option value="滋賀県" {$selected.都道府県.滋賀県}>滋賀県</option>
+                        <option value="京都府" {$selected.都道府県.京都府}>京都府</option>
+                        <option value="大阪府" {$selected.都道府県.大阪府}>大阪府</option>
+                        <option value="兵庫県" {$selected.都道府県.兵庫県}>兵庫県</option>
+                        <option value="奈良県" {$selected.都道府県.奈良県}>奈良県</option>
+                        <option value="和歌山県" {$selected.都道府県.和歌山県}>和歌山県</option>
+                        <option value="鳥取県" {$selected.都道府県.鳥取県}>鳥取県</option>
+                        <option value="島根県" {$selected.都道府県.島根県}>島根県</option>
+                        <option value="岡山県" {$selected.都道府県.岡山県}>岡山県</option>
+                        <option value="広島県" {$selected.都道府県.広島県}>広島県</option>
+                        <option value="山口県" {$selected.都道府県.山口県}>山口県</option>
+                        <option value="徳島県" {$selected.都道府県.徳島県}>徳島県</option>
+                        <option value="香川県" {$selected.都道府県.香川県}>香川県</option>
+                        <option value="愛媛県" {$selected.都道府県.愛媛県}>愛媛県</option>
+                        <option value="高知県" {$selected.都道府県.高知県}>高知県</option>
+                        <option value="福岡県" {$selected.都道府県.福岡県}>福岡県</option>
+                        <option value="佐賀県" {$selected.都道府県.佐賀県}>佐賀県</option>
+                        <option value="長崎県" {$selected.都道府県.長崎県}>長崎県</option>
+                        <option value="熊本県" {$selected.都道府県.熊本県}>熊本県</option>
+                        <option value="大分県" {$selected.都道府県.大分県}>大分県</option>
+                        <option value="宮崎県" {$selected.都道府県.宮崎県}>宮崎県</option>
+                        <option value="鹿児島県" {$selected.都道府県.鹿児島県}>鹿児島県</option>
+                        <option value="沖縄県" {$selected.都道府県.沖縄県}>沖縄県</option>
+                  </select>
+                </label>
+            </td>
+            </tr>
+            </table>
+      </div>
+
+      <div class="privacy">
+    <h3>個人情報の取り扱いについて</h3>
+            <div class="privacy__text">
+                    <h4>【個人情報保護方針】</h4>
+                    <h5>1．基本方針</h5>
+                    <p>株式会社ニューアクション(以下｢当社｣)は、業務を遂行するうえで、当社に従事する者は、個人情報の保護を重要な責務であることを認識し、個人情報を正確かつ安全に取り扱います。</p>
+                    <h5>2．法令等の遵守</h5>
+                    <p>当社は、「個人情報の保護に関する法律」等個人情報の保護に関する法令、国が定めるガイドラインおよび本個人情報保護方針を遵守いたします。</p>
+                    <h5>3．個人情報の取り扱い</h5>
+                    <h6>（1）個人情報の利用目的について</h6>
+                    <p>当社は、利用目的の範囲内で適切な取り扱いをし、取得または預託された個人情報を利用目的以外の利用は行いません。</p>
+                    <h6>（2）個人情報の管理について</h6>
+                    <p>当社は、個人情報への不正アクセス、個人情報の紛失、破壊、改ざんおよび漏洩等のリスクを認識し、予防ならびに是正に努めます。</p>
+                    <p>個人情報へのアクセスは、必要最小限の役員従業員に限定します。</p>
+                    <p>個人情報の取り扱いを外部に委託する場合、十分な個人情報保護水準を確保していることを条件として委託先を選定します。また、委託を受けたものに対する必要かつ適切な監督を行います。</p>
+                    <h6>（3）個人情報の開示について</h6>
+                    <p>当社は、個人情報に関する本人の権利を尊重し、その個人情報に対して開示、訂正および削除を求められた場合、合理的な手続を通してこれに応じます。</p>
+                    <h5>4．教育</h5>
+                    <p>当社は、個人情報の保護に関する教育を、役員および全従業員に対して継続的に行い、個人情報の適切な取り扱いを実践いたします。</p>
+                    <h5>5．苦情および相談への対応</h5>
+                    <p>個人情報の取り扱いに関する苦情および相談を受けた場合には、その内容について事実関係等を迅速に調査し、合理的な期間内に誠意をもって対応いたします。</p>
+                    <h5>6．個人情報保護マネジメントシステムの改善</h5>
+                    <p>当社は、社会情勢・社会環境の変化を踏まえ保有する個人情報の保護に関するための方針、監査および見直しを含むマネジメントシステムを適切に継続的な改善を行います。</p>
+                    <h5>株式会社ニューアクション</h5>
+                    <h6>代表取締役社長　北村真哉</h6>
+                    <h5>＜弊社の個人情報に関するご相談窓口＞</h5>
+                    <p>本個人情報保護方針に関するお問い合わせは、下記までお願いします。<br>
+                    個人情報保護取扱窓口　info@newaction.jp<br>
+                    なお、採用活動を通じてご提供いただいたお客様の個人情報に関するお問い合わせは、<br>上記メールアドレス若しくは総合窓口（03-5456-9467）にて承ります。</p>
+            </div>
+            <label><input type="checkbox" id="check_agree" checked="checked" name="個人情報保護方針に同意する" value="個人情報保護方針に同意する">個人情報保護方針に同意する</label>
+    </div>
+
+  
+                <div align="center"><input type="submit" value="上記に同意し、確認画面へ進む"></div>
+            </form>
+        </div>
+</div>
+</body>
+</html>

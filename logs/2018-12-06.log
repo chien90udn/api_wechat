@@ -1,0 +1,3 @@
+[2018-12-06 07:39:02][debug] begin notify
+[2018-12-06 07:39:02][debug] call back， return xml:<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[OK]]></return_msg></xml>
+[2018-12-06 07:39:06][debug] query:{"appid":"wx426b3015555a46be","err_code":"PARAM_ERROR","err_code_des":"\u5546\u6237\u53f7\u548c\u8ba2\u5355\u4fe1\u606f\u4e0d\u5339\u914d","mch_id":"1900009851","nonce_str":"MqDkA9GlofvBiCsm","result_code":"FAIL","return_code":"SUCCESS","return_msg":"OK","sign":"D5DC5884C69F29B84004141BF78FAB4D6C3369016B5D48C75B5100019D3751B4"}
